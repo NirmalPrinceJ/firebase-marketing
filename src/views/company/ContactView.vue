@@ -78,8 +78,8 @@
                 <label for="message">Message</label>
                 <textarea id="message" v-model="form.message" class="form-control" placeholder="Tell us what you're working on or what you'd like to know..." rows="4" required></textarea>
               </div>
-              <button type="submit" class="btn btn--primary" :disabled="submitted">
-                {{ submitted ? 'Message sent!' : 'Send Message →' }}
+              <button type="submit" class="btn btn--primary" :disabled="submitted || submitting">
+                {{ submitting ? 'Sending...' : submitted ? 'Message sent!' : 'Send Message →' }}
               </button>
               <div v-if="submitted" style="text-align:center;">
                 <p style="color:var(--success);margin:0;">We'll be in touch within one business day.</p>
@@ -104,10 +104,34 @@ const form = reactive({
   message: ''
 })
 
-const submitted = ref(false)
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyc8AuOFDbcbsio9VOsgGvbqI3MzlQjbzc3UWTtwAy5rSsxUR0RmZvuF1XICTLdLa7i/exec'
 
-function submitForm() {
-  // In production, this would send to an API
-  submitted.value = true
+const submitted = ref(false)
+const submitting = ref(false)
+
+async function submitForm() {
+  submitting.value = true
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        formType: 'contact',
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        company: form.company,
+        subject: form.subject,
+        message: form.message,
+        timestamp: new Date().toISOString()
+      })
+    })
+    submitted.value = true
+  } catch (e) {
+    submitted.value = true
+  } finally {
+    submitting.value = false
+  }
 }
 </script>

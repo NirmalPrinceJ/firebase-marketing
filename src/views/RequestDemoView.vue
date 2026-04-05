@@ -77,8 +77,8 @@
                 <label for="context">What's driving your interest?</label>
                 <textarea id="context" v-model="form.context" class="form-control" placeholder="Tell us about your main pain point or what you're hoping to achieve..." rows="3"></textarea>
               </div>
-              <button type="submit" class="btn btn--primary btn--lg" :disabled="submitted">
-                {{ submitted ? 'Request Submitted!' : 'Request My Demo →' }}
+              <button type="submit" class="btn btn--primary btn--lg" :disabled="submitted || submitting">
+                {{ submitting ? 'Submitting...' : submitted ? 'Request Submitted!' : 'Request My Demo →' }}
               </button>
               <p style="font-size:var(--text-xs);color:var(--text-faint);text-align:center;">We'll confirm your slot within one business day.</p>
             </form>
@@ -113,12 +113,40 @@ const form = reactive({
 })
 
 const submitted = ref(false)
+const submitting = ref(false)
 
-function submitForm() {
-  submitted.value = true
-  // In production, this would send to an API, then redirect
-  setTimeout(() => {
-    router.push({ name: 'thank-you' })
-  }, 1500)
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyc8AuOFDbcbsio9VOsgGvbqI3MzlQjbzc3UWTtwAy5rSsxUR0RmZvuF1XICTLdLa7i/exec'
+
+async function submitForm() {
+  submitting.value = true
+  try {
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        formType: 'demo_request',
+        firstName: form.firstName,
+        lastName: form.lastName,
+        email: form.email,
+        company: form.company,
+        role: form.role,
+        stack: form.stack,
+        context: form.context,
+        timestamp: new Date().toISOString()
+      })
+    })
+    submitted.value = true
+    setTimeout(() => {
+      router.push({ name: 'thank-you' })
+    }, 1500)
+  } catch (e) {
+    submitted.value = true
+    setTimeout(() => {
+      router.push({ name: 'thank-you' })
+    }, 1500)
+  } finally {
+    submitting.value = false
+  }
 }
 </script>
