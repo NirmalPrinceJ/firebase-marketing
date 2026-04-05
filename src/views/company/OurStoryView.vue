@@ -108,5 +108,11 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import CtaSection from '../../components/CtaSection.vue'
+onMounted(() => {
+  document.title = 'Our Story — IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'Built by a Customer Success Manager who lived the problem. Disconnected tools, scattered AI conversations, and no single source of truth. That is how IntegrateWise was born.')
+})
 </script>

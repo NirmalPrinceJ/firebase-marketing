@@ -52,5 +52,11 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import CtaSection from '../../components/CtaSection.vue'
+onMounted(() => {
+  document.title = 'Resources — IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'Guides, case studies, and insights on governed AI architecture, the Adaptive Spine, HITL design patterns, and knowledge workspaces.')
+})
 </script>

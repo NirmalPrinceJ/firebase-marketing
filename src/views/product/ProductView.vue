@@ -116,10 +116,16 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import PageHero from '../../components/PageHero.vue'
 import CtaSection from '../../components/CtaSection.vue'
 import { useReveal } from '../../composables/useReveal.js'
 useReveal()
+onMounted(() => {
+  document.title = 'Product — The Adaptive Spine | IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'Six integrated layers: the Adaptive Spine, Entity 360, Signal Engine, HITL Approvals, Memory, and 50+ native connectors — one governed AI workspace.')
+})
 </script>
 
 <style scoped>

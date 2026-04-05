@@ -93,7 +93,13 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
+
+onMounted(() => {
+  document.title = 'Contact — IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'Get in touch with the IntegrateWise team. Questions, partnerships, or demo requests — we respond within one business day.')
+})
 
 const form = reactive({
   firstName: '',

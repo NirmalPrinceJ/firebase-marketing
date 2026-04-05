@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://integratewise.ai/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://integratewise.ai/product</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://integratewise.ai/product/spine</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/product/entity-360</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/product/signals</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/product/approvals</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/product/memory</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/product/integrations</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://integratewise.ai/solutions/roles/founder</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/solutions/roles/account-success</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/solutions/roles/revops</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/roles/finance</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/roles/cto</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/roles/business-ops</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/solutions/industries/saas</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/solutions/industries/retail-ecommerce</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/industries/real-estate</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/modules/cs-command-center</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/modules/revenue-risk</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/modules/business-ops-console</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/solutions/modules/executive-console</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/how-it-works</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://integratewise.ai/how-it-works/architecture</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/how-it-works/governance</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/how-it-works/evidence</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/our-story</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/evidence</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/security</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/faq</loc><priority>0.7</priority></url>
+  <url><loc>https://integratewise.ai/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://integratewise.ai/request-demo</loc><priority>0.9</priority></url>
+  <url><loc>https://integratewise.ai/blog</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://integratewise.ai/resources</loc><priority>0.7</priority></url>
+</urlset>

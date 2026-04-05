@@ -49,5 +49,11 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import CtaSection from '../../components/CtaSection.vue'
+onMounted(() => {
+  document.title = 'Company — IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'IntegrateWise is building the Knowledge Workspace modern teams deserve — where AI thinks in context, earns authority through evidence, and acts only with human approval.')
+})
 </script>

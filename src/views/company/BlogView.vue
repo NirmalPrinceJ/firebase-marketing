@@ -44,4 +44,10 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  document.title = 'Blog — IntegrateWise'
+  const meta = document.querySelector('meta[name="description"]')
+  if (meta) meta.setAttribute('content', 'Insights on governed AI, knowledge workspaces, the Adaptive Spine, and practical thinking on building AI systems organizations can trust.')
+})
 </script>
