@@ -36,10 +36,13 @@
           <div class="footer__col">
             <h4>Company</h4>
             <ul>
-              <li><router-link :to="{ name: 'how-it-works' }">How It Works</router-link></li>
-              <li><router-link :to="{ name: 'pricing' }">Pricing</router-link></li>
-              <li><router-link :to="{ name: 'resources' }">Resources</router-link></li>
               <li><router-link :to="{ name: 'about' }">About</router-link></li>
+              <li><router-link :to="{ name: 'our-story' }">Our Story</router-link></li>
+              <li><router-link :to="{ name: 'how-it-works' }">How It Works</router-link></li>
+              <li><router-link :to="{ name: 'how-it-works-architecture' }">Architecture</router-link></li>
+              <li><router-link :to="{ name: 'security' }">Security</router-link></li>
+              <li><router-link :to="{ name: 'blog' }">Blog</router-link></li>
+              <li><router-link :to="{ name: 'faq' }">FAQ</router-link></li>
             </ul>
           </div>
           <div class="footer__col">

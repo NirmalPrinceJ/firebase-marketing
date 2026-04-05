@@ -36,6 +36,22 @@
         <li><router-link :to="{ name: 'how-it-works' }" class="nav__link" :class="{ 'nav__link--active': isActive('/how-it-works') }">How It Works</router-link></li>
         <li><router-link :to="{ name: 'pricing' }" class="nav__link" :class="{ 'nav__link--active': isActive('/pricing') }">Pricing</router-link></li>
         <li><router-link :to="{ name: 'resources' }" class="nav__link" :class="{ 'nav__link--active': isActive('/resources') }">Resources</router-link></li>
+
+        <!-- Company Dropdown -->
+        <li class="nav__dropdown">
+          <span class="nav__link">
+            Company
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+          <div class="nav__dropdown-menu">
+            <router-link :to="{ name: 'about' }">About IntegrateWise</router-link>
+            <router-link :to="{ name: 'our-story' }">Our Story</router-link>
+            <router-link :to="{ name: 'security' }">Security</router-link>
+            <router-link :to="{ name: 'blog' }">Blog</router-link>
+            <router-link :to="{ name: 'faq' }">FAQ</router-link>
+            <router-link :to="{ name: 'contact' }">Contact</router-link>
+          </div>
+        </li>
       </ul>
 
       <div class="nav__actions">
@@ -73,9 +89,19 @@
 
     <div class="mobile-menu__group">More</div>
     <router-link :to="{ name: 'how-it-works' }" @click="closeMobile">How It Works</router-link>
+    <router-link :to="{ name: 'how-it-works-architecture' }" @click="closeMobile">Architecture Deep Dive</router-link>
+    <router-link :to="{ name: 'how-it-works-governance' }" @click="closeMobile">Governance &amp; HITL</router-link>
+    <router-link :to="{ name: 'how-it-works-evidence' }" @click="closeMobile">Evidence &amp; Audit</router-link>
     <router-link :to="{ name: 'pricing' }" @click="closeMobile">Pricing</router-link>
     <router-link :to="{ name: 'resources' }" @click="closeMobile">Resources</router-link>
-    <router-link :to="{ name: 'about' }" @click="closeMobile">About</router-link>
+
+    <div class="mobile-menu__group">Company</div>
+    <router-link :to="{ name: 'about' }" @click="closeMobile">About IntegrateWise</router-link>
+    <router-link :to="{ name: 'our-story' }" @click="closeMobile">Our Story</router-link>
+    <router-link :to="{ name: 'security' }" @click="closeMobile">Security</router-link>
+    <router-link :to="{ name: 'blog' }" @click="closeMobile">Blog</router-link>
+    <router-link :to="{ name: 'faq' }" @click="closeMobile">FAQ</router-link>
+    <router-link :to="{ name: 'contact' }" @click="closeMobile">Contact</router-link>
     <router-link :to="{ name: 'request-demo' }" @click="closeMobile">Book Demo →</router-link>
   </div>
 </template>

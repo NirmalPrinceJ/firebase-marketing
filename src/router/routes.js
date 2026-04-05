@@ -24,6 +24,18 @@ const ContactView = () => import('../views/company/ContactView.vue')
 const ThankYouView = () => import('../views/ThankYouView.vue')
 const NotFoundView = () => import('../views/NotFoundView.vue')
 
+// Company pages
+const OurStoryView = () => import('../views/company/OurStoryView.vue')
+const BlogView = () => import('../views/company/BlogView.vue')
+const SecurityView = () => import('../views/company/SecurityView.vue')
+const FAQView = () => import('../views/company/FAQView.vue')
+const CompanyView = () => import('../views/company/CompanyView.vue')
+
+// How It Works deep dives
+const ArchitectureView = () => import('../views/how-it-works/ArchitectureView.vue')
+const GovernanceView = () => import('../views/how-it-works/GovernanceView.vue')
+const EvidenceDeepView = () => import('../views/how-it-works/EvidenceDeepView.vue')
+
 const routes = [
   { path: '/', name: 'home', component: HomeView },
 
@@ -49,6 +61,18 @@ const routes = [
   { path: '/request-demo', name: 'request-demo', component: RequestDemoView },
   { path: '/contact', name: 'contact', component: ContactView },
   { path: '/thank-you', name: 'thank-you', component: ThankYouView },
+
+  // Company
+  { path: '/our-story', name: 'our-story', component: OurStoryView },
+  { path: '/blog', name: 'blog', component: BlogView },
+  { path: '/security', name: 'security', component: SecurityView },
+  { path: '/faq', name: 'faq', component: FAQView },
+  { path: '/company/:page?', name: 'company', component: CompanyView },
+
+  // How It Works deep dives
+  { path: '/how-it-works/architecture', name: 'how-it-works-architecture', component: ArchitectureView },
+  { path: '/how-it-works/governance', name: 'how-it-works-governance', component: GovernanceView },
+  { path: '/how-it-works/evidence', name: 'how-it-works-evidence', component: EvidenceDeepView },
 
   // 404
   { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFoundView },
