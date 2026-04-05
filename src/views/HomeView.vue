@@ -9,11 +9,11 @@
           <span class="hero__status">System Active</span>
         </div>
         <h1 class="hero__headline">
-          <span class="gradient-text">Knowledge Workspace</span><br>
-          Over the Spine and Powered by AI.
+          <span class="gradient-text">AI That Knows Your History,</span><br>
+          Not Just Your Data.
         </h1>
         <p class="hero__sub">
-          Stop being a human API. IntegrateWise connects every tool, preserves every conversation, and gives AI the full context it needs — while keeping you in control of every action.
+          Data tools show current state. BI tools show past trends. AI tools answer questions. IntegrateWise remembers decisions, detects contradictions, and acts only with your approval.
         </p>
         <div class="hero__actions">
           <router-link :to="{ name: 'request-demo' }" class="btn btn--primary btn--lg">Request a Demo</router-link>
@@ -115,6 +115,30 @@
             <span class="logo-item" v-for="logo in logos" :key="logo">{{ logo }}</span>
             <span class="logo-item" style="color:var(--primary);opacity:1;">+43 more</span>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING COMPARISON -->
+  <section class="section section--sm">
+    <div class="container">
+      <div class="compare-strip reveal">
+        <div class="compare-item">
+          <div class="compare-item__label">Data Tools</div>
+          <div class="compare-item__val">Show current state</div>
+        </div>
+        <div class="compare-item">
+          <div class="compare-item__label">BI Tools</div>
+          <div class="compare-item__val">Show past trends</div>
+        </div>
+        <div class="compare-item">
+          <div class="compare-item__label">AI Tools</div>
+          <div class="compare-item__val">Answer questions</div>
+        </div>
+        <div class="compare-item compare-item--highlight">
+          <div class="compare-item__label">IntegrateWise</div>
+          <div class="compare-item__val">Remembers decisions + detects contradictions</div>
         </div>
       </div>
     </div>
@@ -552,4 +576,40 @@ const exploreCards = [
   font-family: var(--font-mono); text-transform: uppercase;
   letter-spacing: 0.06em; margin-top: var(--sp-5);
 }
+/* Comparison strip */
+.compare-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-4);
+}
+@media (max-width: 860px) { .compare-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .compare-strip { grid-template-columns: 1fr; } }
+.compare-item {
+  background: var(--surface-0);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  text-align: center;
+}
+.compare-item--highlight {
+  background: rgba(165,108,255,0.08);
+  border-color: var(--border-glass);
+  box-shadow: var(--shadow-purple);
+}
+.compare-item__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-bottom: var(--sp-2);
+}
+.compare-item--highlight .compare-item__label { color: var(--primary); }
+.compare-item__val {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.compare-item--highlight .compare-item__val { color: var(--text-primary); }
 </style>
