@@ -996,6 +996,17 @@ input, textarea, select { font-family: inherit; color: inherit; }
   text-decoration: none;
 }
 .footer__email:hover { color: var(--primary-soft); }
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-top: var(--sp-2);
+  transition: color var(--transition);
+}
+.footer__social:hover { color: var(--primary); }
 .footer__cols {
   display: grid;
   grid-template-columns: repeat(4,1fr);
