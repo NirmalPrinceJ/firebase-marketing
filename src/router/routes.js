@@ -14,6 +14,9 @@ const CeoDashboard = () => import('../views/product/bizops/CeoDashboard.vue')
 const CooDashboard = () => import('../views/product/bizops/CooDashboard.vue')
 const CioCtoBoard = () => import('../views/product/bizops/CioCtoBoard.vue')
 
+// Portfolio
+const PortfolioView = () => import('../views/PortfolioView.vue')
+
 // Other pages
 const HowItWorks = () => import('../views/HowItWorksView.vue')
 const PricingView = () => import('../views/PricingView.vue')
@@ -52,6 +55,9 @@ const routes = [
   { path: '/product/ceo-dashboard', name: 'ceo-dashboard', component: CeoDashboard },
   { path: '/product/coo-dashboard', name: 'coo-dashboard', component: CooDashboard },
   { path: '/product/cio-cto-dashboard', name: 'cio-cto-dashboard', component: CioCtoBoard },
+
+  // Portfolio
+  { path: '/portfolio', name: 'portfolio', component: PortfolioView },
 
   // Core pages
   { path: '/how-it-works', name: 'how-it-works', component: HowItWorks },

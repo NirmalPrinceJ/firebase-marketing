@@ -19,45 +19,43 @@
             <h4>Product</h4>
             <ul>
               <li><router-link :to="{ name: 'mulesoft' }">MuleSoft Account Success</router-link></li>
-              <li><router-link :to="{ name: 'csm-hub' }">CSM Accounts Hub</router-link></li>
-              <li><router-link :to="{ name: 'csm-360' }">CSM Account 360</router-link></li>
-              <li><router-link :to="{ name: 'intelligence-center' }">Intelligence Center</router-link></li>
-              <li><router-link :to="{ name: 'strategic-success' }">Strategic Account Success</router-link></li>
               <li><router-link :to="{ name: 'bizops' }">Business Ops Command Center</router-link></li>
-              <li><router-link :to="{ name: 'founder-ops' }">Founder Ops</router-link></li>
-              <li><router-link :to="{ name: 'ceo-dashboard' }">CEO Dashboard</router-link></li>
-              <li><router-link :to="{ name: 'coo-dashboard' }">COO Dashboard</router-link></li>
-              <li><router-link :to="{ name: 'cio-cto-dashboard' }">CIO/CTO Dashboard</router-link></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h4>How It Works</h4>
+            <h4>Platform</h4>
             <ul>
-              <li><router-link :to="{ name: 'how-it-works' }">Overview</router-link></li>
-              <li><router-link :to="{ name: 'how-it-works-architecture' }">Architecture Deep Dive</router-link></li>
+              <li><router-link :to="{ name: 'how-it-works' }">How It Works</router-link></li>
+              <li><router-link :to="{ name: 'how-it-works-architecture' }">Architecture</router-link></li>
               <li><router-link :to="{ name: 'how-it-works-governance' }">Governance &amp; HITL</router-link></li>
               <li><router-link :to="{ name: 'how-it-works-evidence' }">Evidence &amp; Audit</router-link></li>
             </ul>
           </div>
           <div class="footer__col">
-            <h4>Resources</h4>
+            <h4>Proof</h4>
             <ul>
-              <li><router-link :to="{ name: 'resources' }">Playbooks</router-link></li>
-              <li><router-link :to="{ name: 'resources' }">Incident Library</router-link></li>
+              <li><router-link :to="{ name: 'portfolio' }">Portfolio</router-link></li>
               <li><router-link :to="{ name: 'resources' }">Case Studies</router-link></li>
-              <li><router-link :to="{ name: 'blog' }">Blog</router-link></li>
-              <li><router-link :to="{ name: 'faq' }">FAQ</router-link></li>
+              <li><router-link :to="{ name: 'resources' }">Playbooks</router-link></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="/platform" class="footer__deep-link">Explore Full Platform →</a></li>
+              <li><router-link :to="{ name: 'portfolio' }">View Portfolio →</router-link></li>
+              <li><router-link :to="{ name: 'pricing' }">Pricing</router-link></li>
             </ul>
           </div>
           <div class="footer__col">
             <h4>Company</h4>
             <ul>
-              <li><router-link :to="{ name: 'about' }">About IntegrateWise</router-link></li>
-              <li><router-link :to="{ name: 'our-story' }">Our Story</router-link></li>
+              <li><router-link :to="{ name: 'about' }">About</router-link></li>
+              <li><router-link :to="{ name: 'our-story' }">Story</router-link></li>
               <li><router-link :to="{ name: 'security' }">Security</router-link></li>
               <li><router-link :to="{ name: 'contact' }">Contact</router-link></li>
-              <li><router-link :to="{ name: 'pricing' }">Pricing</router-link></li>
-              <li><router-link :to="{ name: 'request-demo' }">Book Demo</router-link></li>
+              <li><router-link :to="{ name: 'blog' }">Blog</router-link></li>
+              <li><router-link :to="{ name: 'faq' }">FAQ</router-link></li>
             </ul>
           </div>
         </div>
