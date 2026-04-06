@@ -1255,3 +1255,100 @@ textarea.form-control { resize: vertical; min-height: 120px; }
 .security-table tr:hover td { background: var(--surface-0); }
 .check-mark { color: var(--success); }
 .x-mark { color: var(--error); }
+
+/* ── ELITE ENHANCEMENTS ──────────────────────────────────────── */
+
+/* 1. Compact section utility */
+.section--compact {
+  padding-block: clamp(var(--sp-8), 4vw, var(--sp-12));
+}
+
+/* 2. Improved card hover — subtle scale */
+.card:hover {
+  transform: translateY(-3px) scale(1.01);
+}
+
+/* 3. Compact card variant */
+.card--compact { padding: var(--sp-4); }
+.card--compact h3 { font-size: var(--text-base); margin-bottom: var(--sp-2); }
+.card--compact p { font-size: var(--text-sm); }
+
+/* 4. Outcome line for green result text */
+.outcome-line {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--success);
+  margin-top: var(--sp-3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* 5. Bigger, more impactful hero headline */
+.hero__headline {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+/* 6. Split section for side-by-side layouts */
+.split-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .split-section { grid-template-columns: 1fr; }
+}
+
+/* 7. Clean bullet list */
+.bullet-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.bullet-list li {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding-left: var(--sp-5);
+  position: relative;
+}
+.bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.6;
+}
+
+/* 8. Clickable product card link */
+.card--link {
+  text-decoration: none;
+  cursor: pointer;
+}
+.card--link:hover .role-card__link { color: var(--primary-soft); }
+
+/* 9. Pricing displays */
+.card__price {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--primary);
+  margin-top: var(--sp-3);
+}
+.card__price-lg {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  margin-top: var(--sp-3);
+}
+
+/* 10. Tighter section-header spacing */
+.section-header {
+  margin-bottom: clamp(var(--sp-8), 3vw, var(--sp-12));
+}
