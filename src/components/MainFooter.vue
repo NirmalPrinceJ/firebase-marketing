@@ -4,7 +4,15 @@
       <div class="footer__top">
         <div class="footer__brand">
           <router-link :to="{ name: 'home' }" class="footer__logo">
-            <img src="/Frame 2.png" alt="IntegrateWise" class="nav__logo-img" />
+            <svg width="48" height="32" viewBox="0 0 120 80" fill="none">
+              <path d="M12 40 Q24 10 40 40 Q56 70 72 40 Q88 10 108 40" stroke="white" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <circle cx="12" cy="40" r="8" fill="white" opacity="0.7"/>
+              <circle cx="40" cy="40" r="7" fill="white"/>
+              <line x1="40" y1="40" x2="40" y2="60" stroke="white" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="72" cy="40" r="7" fill="white"/>
+              <line x1="72" y1="40" x2="72" y2="20" stroke="white" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="108" cy="40" r="7" fill="white" opacity="0.5"/>
+            </svg>
             <span>IntegrateWise</span>
           </router-link>
           <p class="footer__tagline">Knowledge Workspace Over the Spine, Powered by AI</p>

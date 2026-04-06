@@ -1009,10 +1009,11 @@ input, textarea, select { font-family: inherit; color: inherit; }
 .footer__social:hover { color: var(--primary); }
 .footer__cols {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: var(--sp-8);
+  grid-template-columns: repeat(5,1fr);
+  gap: var(--sp-6);
 }
-@media (max-width: 720px) { .footer__cols { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 900px) { .footer__cols { grid-template-columns: repeat(3,1fr); } }
+@media (max-width: 600px) { .footer__cols { grid-template-columns: repeat(2,1fr); } }
 .footer__col h4 {
   font-size: var(--text-xs);
   font-family: var(--font-mono);
