@@ -7,12 +7,9 @@
       </router-link>
 
       <ul class="nav__links" role="list">
-        <!-- Product Dropdown -->
+        <!-- Product -->
         <li class="nav__dropdown">
-          <span class="nav__link">
-            Product
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <span class="nav__link">Product <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
           <div class="nav__dropdown-menu nav__dropdown-menu--wide">
             <div class="nav__dropdown-col">
               <div class="nav__dropdown-group">MuleSoft Account Success</div>
@@ -33,22 +30,40 @@
           </div>
         </li>
 
-        <li><router-link :to="{ name: 'how-it-works' }" class="nav__link" :class="{ 'nav__link--active': isActive('/how-it-works') }">How It Works</router-link></li>
-        <li><router-link :to="{ name: 'pricing' }" class="nav__link" :class="{ 'nav__link--active': isActive('/pricing') }">Pricing</router-link></li>
-        <li><router-link :to="{ name: 'resources' }" class="nav__link" :class="{ 'nav__link--active': isActive('/resources') }">Resources</router-link></li>
-
-        <!-- Company Dropdown -->
+        <!-- How It Works -->
         <li class="nav__dropdown">
-          <span class="nav__link">
-            Company
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-          </span>
+          <router-link :to="{ name: 'how-it-works' }" class="nav__link" :class="{ 'nav__link--active': isActive('/how-it-works') }">
+            How It Works <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </router-link>
+          <div class="nav__dropdown-menu">
+            <router-link :to="{ name: 'how-it-works' }">Overview</router-link>
+            <router-link :to="{ name: 'how-it-works-architecture' }">Architecture Deep Dive</router-link>
+            <router-link :to="{ name: 'how-it-works-governance' }">Governance &amp; HITL</router-link>
+            <router-link :to="{ name: 'how-it-works-evidence' }">Evidence &amp; Audit</router-link>
+          </div>
+        </li>
+
+        <li><router-link :to="{ name: 'pricing' }" class="nav__link" :class="{ 'nav__link--active': isActive('/pricing') }">Pricing</router-link></li>
+
+        <!-- Resources -->
+        <li class="nav__dropdown">
+          <router-link :to="{ name: 'resources' }" class="nav__link" :class="{ 'nav__link--active': isActive('/resources') || isActive('/blog') || isActive('/faq') }">
+            Resources <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </router-link>
+          <div class="nav__dropdown-menu">
+            <router-link :to="{ name: 'resources' }">All Resources</router-link>
+            <router-link :to="{ name: 'blog' }">Blog</router-link>
+            <router-link :to="{ name: 'faq' }">FAQ</router-link>
+          </div>
+        </li>
+
+        <!-- Company -->
+        <li class="nav__dropdown">
+          <span class="nav__link">Company <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg></span>
           <div class="nav__dropdown-menu">
             <router-link :to="{ name: 'about' }">About IntegrateWise</router-link>
             <router-link :to="{ name: 'our-story' }">Our Story</router-link>
             <router-link :to="{ name: 'security' }">Security</router-link>
-            <router-link :to="{ name: 'blog' }">Blog</router-link>
-            <router-link :to="{ name: 'faq' }">FAQ</router-link>
             <router-link :to="{ name: 'contact' }">Contact</router-link>
           </div>
         </li>
@@ -59,7 +74,6 @@
           <svg v-if="theme === 'dark'" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
           <svg v-else width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <router-link :to="{ name: 'founder-ops' }" class="btn btn--ghost btn--sm">Start Free</router-link>
         <router-link :to="{ name: 'request-demo' }" class="btn btn--primary btn--sm">Book Demo</router-link>
       </div>
 
@@ -69,7 +83,6 @@
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
   <div class="mobile-menu" :class="{ open: mobileOpen }" role="dialog" aria-label="Mobile navigation">
     <button class="mobile-menu__close btn btn--ghost btn--sm" @click="closeMobile">&#x2715; Close</button>
 
@@ -87,20 +100,22 @@
     <router-link :to="{ name: 'coo-dashboard' }" @click="closeMobile">COO Dashboard</router-link>
     <router-link :to="{ name: 'cio-cto-dashboard' }" @click="closeMobile">CIO/CTO Dashboard</router-link>
 
-    <div class="mobile-menu__group">More</div>
-    <router-link :to="{ name: 'how-it-works' }" @click="closeMobile">How It Works</router-link>
-    <router-link :to="{ name: 'how-it-works-architecture' }" @click="closeMobile">Architecture Deep Dive</router-link>
+    <div class="mobile-menu__group">How It Works</div>
+    <router-link :to="{ name: 'how-it-works' }" @click="closeMobile">Overview</router-link>
+    <router-link :to="{ name: 'how-it-works-architecture' }" @click="closeMobile">Architecture</router-link>
     <router-link :to="{ name: 'how-it-works-governance' }" @click="closeMobile">Governance &amp; HITL</router-link>
     <router-link :to="{ name: 'how-it-works-evidence' }" @click="closeMobile">Evidence &amp; Audit</router-link>
+
+    <div class="mobile-menu__group">More</div>
     <router-link :to="{ name: 'pricing' }" @click="closeMobile">Pricing</router-link>
     <router-link :to="{ name: 'resources' }" @click="closeMobile">Resources</router-link>
-
-    <div class="mobile-menu__group">Company</div>
-    <router-link :to="{ name: 'about' }" @click="closeMobile">About IntegrateWise</router-link>
-    <router-link :to="{ name: 'our-story' }" @click="closeMobile">Our Story</router-link>
-    <router-link :to="{ name: 'security' }" @click="closeMobile">Security</router-link>
     <router-link :to="{ name: 'blog' }" @click="closeMobile">Blog</router-link>
     <router-link :to="{ name: 'faq' }" @click="closeMobile">FAQ</router-link>
+
+    <div class="mobile-menu__group">Company</div>
+    <router-link :to="{ name: 'about' }" @click="closeMobile">About</router-link>
+    <router-link :to="{ name: 'our-story' }" @click="closeMobile">Our Story</router-link>
+    <router-link :to="{ name: 'security' }" @click="closeMobile">Security</router-link>
     <router-link :to="{ name: 'contact' }" @click="closeMobile">Contact</router-link>
     <router-link :to="{ name: 'request-demo' }" @click="closeMobile">Book Demo →</router-link>
   </div>
@@ -110,18 +125,15 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useTheme } from '../composables/useTheme.js'
-
 const route = useRoute()
 const { theme, toggleTheme, initTheme } = useTheme()
 const isScrolled = ref(false)
 const mobileOpen = ref(false)
-
 function isActive(path) { return route.path.startsWith(path) }
 function openMobile() { mobileOpen.value = true; document.body.style.overflow = 'hidden' }
 function closeMobile() { mobileOpen.value = false; document.body.style.overflow = '' }
 function handleScroll() { isScrolled.value = window.scrollY > 20 }
 function handleKeydown(e) { if (e.key === 'Escape') closeMobile() }
-
 onMounted(() => { initTheme(); window.addEventListener('scroll', handleScroll, { passive: true }); document.addEventListener('keydown', handleKeydown); handleScroll() })
 onUnmounted(() => { window.removeEventListener('scroll', handleScroll); document.removeEventListener('keydown', handleKeydown) })
 </script>
